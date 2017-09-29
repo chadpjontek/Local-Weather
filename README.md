@@ -1,2 +1,2 @@
 # Local-Weather
-A web app that displays the users local weather.
+A web app that displays the user's local weather.
