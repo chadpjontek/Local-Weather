@@ -6,30 +6,101 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
 
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center mt-3 h4">Today's Weather in</h1>
-        <h2 id="city" class="display-4 text-center mb-3">Port Orange, FL</h2>
-    </div>
-    <div class="card mx-auto text-center" style="width: 20rem;">
-        <img id="img" class="card-img-top" src="" alt="weather icon">
-        <div class="card-body">
-            <h4 id="temp" class="card-title display-4"></h4>
-            <p id="weather" class="card-text h1">Sunshine is delicious, rain is refreshing, wind braces us up, snow is exhilarating; there is really no such thing
-                as bad weather, only different kinds of good weather.</p>
-            <a id="toggle" href="#toggle" class="btn btn-primary">&degF / &degC</a>
+    <div class="container-fluid wow zoomIn">
+        <div class="row flex d-flex justify-content-around">
+            <div class="col-12">
+                <h2 id="city" class="display-4 text-center text-light my-3">Your Location</h2>
+            </div>
+        </div>
+        <div class="card mx-auto text-center m-15" style="width: 20rem;">
+            <img id="img" class="card-img-top" src="" alt="weather image">
+            <div class="card-body">
+                <p id="weather" class="card-text">Current Weather</p>
+                <h4 id="temp" class="card-title">Current Temp</h4>
+                <a id="toggle" href="#toggle" class="btn btn-primary badge-pill">&degF / &degC</a>
+            </div>
+        </div>
+        <div class="row flex d-flex justify-content-around">
+            <div class="col-12">
+                <h2 class="display-4 text-center text-light mt-3">Hourly Forcast</h2>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-around mt-3">
+            <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
+                <div class="card-header">
+                    Fri 3PM
+                </div>
+                <img id="imgHourly1" class="card-img-top" src="" alt="weather image">
+                <div class="card-body">
+                    <p id="weatherHourly1" class="card-text">Hourly Weather1</p>
+                    <h4 id="tempHourly1" class="card-title">Hourly Temp1</h4>
+                </div>
+            </div>
+            <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
+                <div class="card-header">
+                    Fri 6PM
+                </div>
+                <img id="imgHourly2" class="card-img-top" src="" alt="weather image">
+                <div class="card-body">
+                    <p id="weatherHourly2" class="card-text">Hourly Weather2</p>
+                    <h4 id="tempHourly2" class="card-title">Hourly Temp2</h4>
+                </div>
+            </div>
+            <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
+                <div class="card-header">
+                    Fri 9PM
+                </div>
+                <img id="imgHourly3" class="card-img-top" src="" alt="weather image">
+                <div class="card-body">
+                    <p id="weatherHourly3" class="card-text">Hourly Weather3</p>
+                    <h4 id="tempHourly3" class="card-title">Hourly Temp3</h4>
+                </div>
+            </div>
+            <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
+                <div class="card-header">
+                    Sat 12AM
+                </div>
+                <img id="imgHourly4" class="card-img-top" src="" alt="weather image">
+                <div class="card-body">
+                    <p id="weatherHourly4" class="card-text">Hourly Weather4</p>
+                    <h4 id="tempHourly4" class="card-title">Hourly Temp4</h4>
+                </div>
+            </div>
+            <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
+                <div class="card-header">
+                    Sat 3AM
+                </div>
+                <img id="imgHourly5" class="card-img-top" src="" alt="weather image">
+                <div class="card-body">
+                    <p id="weatherHourly5" class="card-text">Hourly Weather5</p>
+                    <h4 id="tempHourly5" class="card-title">Hourly Temp5</h4>
+                </div>
+            </div>
+            <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
+                <div class="card-header">
+                    Sat 6AM
+                </div>
+                <img id="imgHourly6" class="card-img-top" src="" alt="weather image">
+                <div class="card-body">
+                    <p id="weatherHourly6" class="card-text">Hourly Weather6</p>
+                    <h4 id="tempHourly6" class="card-title">Hourly Temp6</h4>
+                </div>
+            </div>
         </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <!-- My JavaScript -->
     <script src="Local-Weather.js"></script>
 
