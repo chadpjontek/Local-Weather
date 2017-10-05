@@ -22,13 +22,8 @@ $(document).ready(function () {
       $.getJSON(endPoint, function (json) {
         //show current weather condition
         $("#weather").html(json.list[0].weather[0].description);
-        //show current temp in either C or F
-        temp = json.list[0].main.temp;
-        if (isCelsius) {
-          $("#temp").html(Math.round(json.list[0].main.temp - 273.15) + "&degC");
-        } else {
-          $("#temp").html(Math.round(json.list[0].main.temp * 1.8 - 459.67) + "&degF");
-        };
+        //show current temp
+        getTemp(json.list[0].main.temp);
         //display current city
         $("#city").html(json.city.name);
         //function to get weather id
@@ -148,6 +143,9 @@ $(document).ready(function () {
               $("#imgHourly" + i).attr("src", "https://render.bitstrips.com/v2/cpanel/10192284-120048733_6-s1-v1.png?transparent=1&palette=1");
               break;
           };
+          $("#hour" + i).html(dayOfWeek(json.list[i].dt));
+          $("#weatherHourly" + i).html(json.list[i].weather[0].description);
+          $("#tempHourly" + i).html(getTemp(json.list[i].main.temp));
         };
       });
     });
@@ -161,6 +159,55 @@ $(document).ready(function () {
       $("#temp").html(Math.round(temp * 1.8 - 459.67) + "&degF");
     }
   });
-  //activate WOW.js
-  new WOW().init();
+
+  //show current temp in either C or F
+  var getTemp = function (temp) {
+    if (isCelsius) {
+      return Math.round(temp - 273.15);
+    } else {
+      return Math.round(temp * 1.8 - 459.67);
+    };
+  }
+
+  //find day of week
+  var dayOfWeek = function (date) {
+    var xx = new Date();
+    xx.setTime(date * 1000); // javascript timestamps are in milliseconds
+    var day = xx.getDay(); // the Day
+    switch (day) {
+      case 0:
+        return "Sun";
+      case 1:
+        return "Mon";
+      case 2:
+        return "Tue";
+      case 3:
+        return "Wed";
+      case 4:
+        return "Thur";
+      case 5:
+        return "Fri";
+      case 6:
+        return "Sat";
+    };
+  }
+
+  // Helper function for add element box list in WOW
+  WOW.prototype.addBox = function (element) {
+    this.boxes.push(element);
+  };
+
+  // Init WOW.js and get instance
+  var wow = new WOW();
+  wow.init();
+
+  // Attach scrollSpy to .wow elements for detect view exit events,
+  // then reset elements and add again for animation
+  $('.wow').on('scrollSpy:exit', function () {
+    $(this).css({
+      'visibility': 'hidden',
+      'animation-name': 'none'
+    }).removeClass('animated');
+    wow.addBox(this);
+  }).scrollSpy();
 })

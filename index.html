@@ -9,8 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 </head>
 
 <body>
@@ -25,7 +24,14 @@
             <div class="card-body">
                 <p id="weather" class="card-text">Current Weather</p>
                 <h4 id="temp" class="card-title">Current Temp</h4>
-                <a id="toggle" href="#toggle" class="btn btn-primary badge-pill">&degF / &degC</a>
+                <div id="toggle" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active badge badge-pill">
+                          <input type="radio" name="options" id="option1" autocomplete="off" checked> &degF
+                        </label>
+                    <label class="btn btn-success badge badge-pill">
+                          <input type="radio" name="options" id="option2" autocomplete="off"> &degC
+                        </label>
+                </div>
             </div>
         </div>
         <div class="row flex d-flex justify-content-around">
@@ -35,7 +41,7 @@
         </div>
         <div class="row d-flex justify-content-around mt-3">
             <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
-                <div class="card-header">
+                <div id="hour1" class="card-header">
                     Fri 3PM
                 </div>
                 <img id="imgHourly1" class="card-img-top" src="" alt="weather image">
@@ -45,7 +51,7 @@
                 </div>
             </div>
             <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
-                <div class="card-header">
+                <div id="hour2" class="card-header">
                     Fri 6PM
                 </div>
                 <img id="imgHourly2" class="card-img-top" src="" alt="weather image">
@@ -55,7 +61,7 @@
                 </div>
             </div>
             <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
-                <div class="card-header">
+                <div id="hour3" class="card-header">
                     Fri 9PM
                 </div>
                 <img id="imgHourly3" class="card-img-top" src="" alt="weather image">
@@ -65,7 +71,7 @@
                 </div>
             </div>
             <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
-                <div class="card-header">
+                <div id="hour4" class="card-header">
                     Sat 12AM
                 </div>
                 <img id="imgHourly4" class="card-img-top" src="" alt="weather image">
@@ -75,7 +81,7 @@
                 </div>
             </div>
             <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
-                <div class="card-header">
+                <div id="hour5" class="card-header">
                     Sat 3AM
                 </div>
                 <img id="imgHourly5" class="card-img-top" src="" alt="weather image">
@@ -85,7 +91,7 @@
                 </div>
             </div>
             <div class="card text-center hourly wow zoomIn" data-wow-delay=".2s">
-                <div class="card-header">
+                <div id="hour6" class="card-header">
                     Sat 6AM
                 </div>
                 <img id="imgHourly6" class="card-img-top" src="" alt="weather image">
@@ -101,6 +107,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <!-- scrollSpy plugin see https://github.com/thesmart/jquery-scrollspy -->
+    <script src="https://gitcdn.xyz/repo/thesmart/jquery-scrollspy/0.1.3/scrollspy.js"></script>
     <!-- My JavaScript -->
     <script src="Local-Weather.js"></script>
 
