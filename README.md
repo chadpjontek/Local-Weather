@@ -1,2 +1,2 @@
-# Local-Weather
-A web app that displays the user's local weather.
+# RiRi's-Weather
+A customized weather app for Mariah on her birthday. Happy Birthday!
