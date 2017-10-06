@@ -1,0 +1,33 @@
+html {
+    min-height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(to left top, #FFE2F4, #A2D6FA);
+}
+.card {
+    box-shadow: 2px 3px 15px rgb(136, 124, 153);
+}
+.display-4 {
+    text-shadow: 2px 3px 5px rgb(136, 124, 153);
+}
+.hourly {
+    background: white;
+    box-shadow: 2px 3px 15px rgb(136, 124, 153);
+    margin-top: 15px;
+    width: 10rem;
+}
+.card-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+.card-header {
+    font-weight: 900;
+}
