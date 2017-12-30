@@ -1,4 +1,4 @@
 # RiRis-Weather
-A customized weather app for Mariah on her birthday. Happy Birthday!
+A customized weather app for a friend on her birthday using the Bitmoji and OpenWeather APIs.
 
 https://riris-weather.netlify.com/
